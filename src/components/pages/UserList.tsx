@@ -1,14 +1,14 @@
 
 import { useEffect, useState } from 'react';
 import { FaPlus, FaSearch, FaUsers } from 'react-icons/fa';
-import { useUserContext } from '../context/useUserContext';
-import UserCard from './UserCard';
-import UserModal from './UserModal';
-import UserForm from './UserForm';
-import DeleteConfirmModal from './DeleteConfirmModal';
-import LoadingSpinner from './LoadingSpinner';
-import ErrorMessage from './ErrorMessage';
-import type { User } from '../types/user';
+import { useUserContext } from '../../context/useUserContext';
+import UserCard from '../UserCard';
+import UserModal from '../UserModal';
+import UserForm from '../UserForm';
+import DeleteConfirmModal from '../DeleteConfirmModal';
+import LoadingSpinner from '../LoadingSpinner';
+import ErrorMessage from '../ErrorMessage';
+import type { User } from '../../types/user';
 
 export default function UserList() {
   const {

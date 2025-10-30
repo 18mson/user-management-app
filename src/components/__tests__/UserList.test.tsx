@@ -1,7 +1,7 @@
 // UserList.test.tsx
 import { render, screen, fireEvent } from '@testing-library/react';
 import { describe, it, vi, beforeEach, expect } from 'vitest';
-import UserList from '../UserList';
+import UserList from '../pages/UserList';
 import type { User } from '../../types/user';
 import type { UserContextValue } from '../../context/UserContext';
 

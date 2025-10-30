@@ -1,5 +1,5 @@
 import { UserProvider } from './context/UserProvider';
-import UserList from './components/UserList';
+import UserList from './components/pages/UserList';
 
 function App() {
   return (

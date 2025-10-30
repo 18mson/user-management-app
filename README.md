@@ -1,73 +1,104 @@
-# React + TypeScript + Vite
+# User Management App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React + TypeScript web application to manage users.  
+Built with Tailwind CSS, React Context + useReducer, and fully responsive on desktop and mobile.  
+Includes CRUD operations, loading/error states, and unit tests with Vitest + React Testing Library.
 
-Currently, two official plugins are available:
+## Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[User Management App on Vercel](https://user-management-app-18mson.vercel.app)
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- List users fetched from JSONPlaceholder API  
+- View user details in a modal  
+- Add new users  
+- Edit existing users  
+- Delete users  
+- Loading and error handling states  
+- Fully responsive design  
+- Random user profile pictures via Picsum Photos  
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React 19 + TypeScript  
+- Tailwind CSS  
+- React Context + useReducer for state management  
+- Vitest + React Testing Library for unit tests  
+- Vercel for deployment  
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Installation
+Clone the repository:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+git clone https://github.com/18mson/user-management-app.git
+cd user-management-app
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Install dependencies:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
+
+## Run the Application
+
+Run the development server:
+
+```bash
+npm run dev
+```
+
+Build the application:
+
+```bash
+npm run build
+```
+
+Test the application:
+
+```bash
+npm run test
+```
+
+run in watch mode:
+
+```bash
+npm run test:watch
+```
+
+Generate test coverage report:
+
+```bash
+npm run test:cover
+```
+the project currenly has 90% test coverage
+
+linting for checking error:
+
+```bash
+npm run lint
+```
+ESLint + Prettier are configured for consistent code style.
+
+project Structure:
+
+```
+src/
+├── components/  # Reusable components
+│   ├── __tests__/  # Unit tests for components
+│   ├── Pages/  # Page components (e.g., UserList)
+├── context/  # React Context for state management
+│   ├── __tests__/  # Unit tests for components
+├── types/  # TypeScript type definitions
+├── App.tsx  # Main application component
+├── index.css  # Global styles
+```
+
+contributing:
+
+Fork the repo
+Create a branch (git checkout -b feature/your-feature)
+Commit your changes (git commit -m 'Add feature')
+Push to branch (git push origin feature/your-feature)
+Open a Pull Request
