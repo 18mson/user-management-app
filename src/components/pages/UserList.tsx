@@ -8,7 +8,8 @@ import UserForm from '../UserForm';
 import DeleteConfirmModal from '../DeleteConfirmModal';
 import LoadingSpinner from '../LoadingSpinner';
 import ErrorMessage from '../ErrorMessage';
-import type { User } from '../../types/user';
+import type { CreateUserData, User } from '../../types/user';
+import { toast } from 'react-hot-toast';
 
 export default function UserList() {
   const {
@@ -44,8 +45,24 @@ export default function UserList() {
     if (user) setDeletingUser(user);
   };
 
-  const confirmDeleteUser = () => {
-    if (deletingUser) deleteUser(deletingUser.id);
+  const confirmDeleteUser = async () => {
+    if (deletingUser) {
+      await deleteUser(deletingUser.id);
+      toast.success('User deleted successfully!');
+      setDeletingUser(null);
+    }
+  };
+
+  const handleAddUser = async (userData: CreateUserData) => {
+    await addUser(userData);
+    toast.success('User added successfully!');
+    setShowAddForm(false);
+  };
+
+  const handleUpdateUser = async (userData: User) => {
+    await updateUser(userData);
+    toast.success('User updated successfully!');
+    setEditingUser(null);
   };
 
   return (
@@ -142,7 +159,7 @@ export default function UserList() {
         <UserForm
           isOpen={showAddForm}
           onClose={() => setShowAddForm(false)}
-          onSubmit={addUser}
+          onSubmit={handleAddUser}
           title="Add New User"
         />
 
@@ -150,7 +167,7 @@ export default function UserList() {
           user={editingUser}
           isOpen={!!editingUser}
           onClose={() => setEditingUser(null)}
-          onSubmit={updateUser}
+          onSubmit={handleUpdateUser}
           title="Edit User"
         />
 

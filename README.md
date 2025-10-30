@@ -61,7 +61,7 @@ Test the application:
 npm run test
 ```
 
-run in watch mode:
+run test in watch mode:
 
 ```bash
 npm run test:watch
@@ -85,20 +85,20 @@ project Structure:
 
 ```
 src/
-├── components/  # Reusable components
+├── components/     # Reusable components
 │   ├── __tests__/  # Unit tests for components
-│   ├── Pages/  # Page components (e.g., UserList)
-├── context/  # React Context for state management
+│   ├── Pages/      # Page components (e.g., UserList)
+├── context/        # React Context for state management
 │   ├── __tests__/  # Unit tests for components
-├── types/  # TypeScript type definitions
-├── App.tsx  # Main application component
-├── index.css  # Global styles
+├── types/          # TypeScript type definitions
+├── App.tsx         # Main application component
+├── index.css       # Global styles
 ```
 
-contributing:
+## Contributing
 
-Fork the repo
-Create a branch (git checkout -b feature/your-feature)
-Commit your changes (git commit -m 'Add feature')
-Push to branch (git push origin feature/your-feature)
-Open a Pull Request
+- Fork the repo
+- Create a branch (`git checkout -b feature/your-feature`)
+- Commit your changes (`git commit -m 'Add feature'`)
+- Push to branch (`git push origin feature/your-feature`)
+- Open a Pull Request
