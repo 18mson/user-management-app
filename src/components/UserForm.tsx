@@ -136,6 +136,7 @@ const UserForm: React.FC<UserFormProps> = ({
                 {field.label}
               </label>
               <input
+                data-testid={`input-${field.name}`}
                 type={field.type}
                 name={field.name}
                 value={formData[field.name as keyof CreateUserData] ?? ''}
@@ -164,6 +165,7 @@ const UserForm: React.FC<UserFormProps> = ({
               Cancel
             </button>
             <button
+              data-testid="submit-button"
               type="submit"
               className="flex-1 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md font-medium transition-colors"
             >

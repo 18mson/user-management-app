@@ -42,6 +42,7 @@ const DeleteConfirmModal: React.FC<DeleteConfirmModalProps> = ({
             </h2>
           </div>
           <button
+            data-testid="close-delete-modal-button"
             onClick={onClose}
             className="p-2 hover:bg-gray-100 rounded-full transition-colors"
           >
@@ -78,7 +79,7 @@ const DeleteConfirmModal: React.FC<DeleteConfirmModalProps> = ({
             className="flex-1 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-md font-medium transition-colors flex items-center justify-center gap-2"
           >
             <FaTrash className="h-4 w-4" />
-            Delete User
+            Confirm Delete
           </button>
         </div>
       </div>

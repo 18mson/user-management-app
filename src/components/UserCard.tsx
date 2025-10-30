@@ -19,7 +19,7 @@ const UserCard: React.FC<UserCardProps> = ({
   const profileImage = `https://picsum.photos/seed/${user.id}/150/150`;
 
   return (
-    <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-all duration-300 border border-gray-100">
+    <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-all duration-300 border border-gray-100" data-testid={`user-card-${user.id}`}>
       <div className="flex flex-col items-center text-center mb-4">
         <img
           src={profileImage}
@@ -53,18 +53,21 @@ const UserCard: React.FC<UserCardProps> = ({
 
       <div className="flex gap-2">
         <button
+          data-testid="view-button"
           onClick={() => onView(user)}
           className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 px-3 rounded-md text-sm font-medium transition-colors"
         >
           View
         </button>
         <button
+          data-testid="edit-button"
           onClick={() => onEdit(user)}
           className="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-700 py-2 px-3 rounded-md text-sm font-medium transition-colors"
         >
           Edit
         </button>
         <button
+          data-testid="delete-button"
           onClick={() => onDelete(user.id)}
           className="bg-red-100 hover:bg-red-200 text-red-700 py-2 px-3 rounded-md text-sm font-medium transition-colors"
         >

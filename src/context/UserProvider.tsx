@@ -1,22 +1,8 @@
 import React, { useReducer, type ReactNode } from 'react';
 import { UserContext } from './UserContext';
 import type { User, CreateUserData } from '../types/user';
-
-interface UserState {
-  users: User[];
-  loading: boolean;
-  error: string | null;
-  selectedUser: User | null;
-}
-
-type UserAction =
-  | { type: 'SET_LOADING'; payload: boolean }
-  | { type: 'SET_USERS'; payload: User[] }
-  | { type: 'SET_ERROR'; payload: string | null }
-  | { type: 'SET_SELECTED_USER'; payload: User | null }
-  | { type: 'ADD_USER'; payload: User }
-  | { type: 'UPDATE_USER'; payload: User }
-  | { type: 'DELETE_USER'; payload: number };
+import type { UserAction } from './UserContext';
+import type { UserState } from './UserContext';
 
 const initialState: UserState = {
   users: [],
