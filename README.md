@@ -6,7 +6,7 @@ Includes CRUD operations, loading/error states, and unit tests with Vitest + Rea
 
 ## Live Demo
 
-[User Management App on Vercel](https://user-management-app-18mson.vercel.app)
+[User Management App on Vercel](https://user-management-app-pearl-three.vercel.app/)
 
 ## Features
 
