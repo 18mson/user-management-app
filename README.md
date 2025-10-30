@@ -19,6 +19,12 @@ Includes CRUD operations, loading/error states, and unit tests with Vitest + Rea
 - Fully responsive design  
 - Random user profile pictures via Picsum Photos  
 
+# Notes
+
+- This project uses the JSONPlaceholder API to fetch and manage user data—perfect for testing without setting up a real backend.
+- User profile pictures are randomly generated with Picsum Photos, so every user looks unique!
+- When adding a new user, you only need to fill in name, username, email, phone, and website—keeping it simple and quick for testing.
+
 ## Tech Stack
 
 - React 19 + TypeScript  
@@ -72,7 +78,7 @@ Generate test coverage report:
 ```bash
 npm run test:cover
 ```
-the project currenly has 90% test coverage
+the project currenly has 80% ++ test coverage
 
 linting for checking error:
 
